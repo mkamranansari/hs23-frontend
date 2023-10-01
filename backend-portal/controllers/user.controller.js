@@ -84,3 +84,18 @@ module.exports.deleteUser_del = async (req, res) => {
 		return res.status(400).json({ status: 400, data: e.message });
 	}
 }
+
+module.exports.registerUser_post = async (req, res) => {
+	try {
+		const { error, value } = VUser.register.validate(req.body);
+		if (error) throw new Error(error);
+
+		const newUser = new User({ ...value, role: 'user' });
+		newUser.save();
+		res.json({ status: 200 })
+	}
+	catch (e) {
+		console.log("ERROR: ", e);
+		return res.status(400).json({ status: 400, data: e.message });
+	}
+}

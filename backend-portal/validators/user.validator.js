@@ -7,6 +7,12 @@ const init = J.object({
 	role: J.string().allow('admin', 'user')
 });
 
+const register = J.object({
+	fullName: J.string().required(),
+	password: J.string().min(1).required(),
+	email: J.string().email().required()
+});
+
 const update = J.object({
 	fullName: J.string(),
 	email: J.string().email()
@@ -39,4 +45,4 @@ const forgotChange = J.object({
 	confirm: J.ref('password'),
 })
 
-module.exports = { init, update, updateAdmin, changePass, forgotPassword, forgotVerify, forgotChange }
+module.exports = { init, register, update, updateAdmin, changePass, forgotPassword, forgotVerify, forgotChange }

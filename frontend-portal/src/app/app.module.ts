@@ -59,7 +59,7 @@ registerLocaleData(en);
     { provide: NZ_I18N, useValue: en_US },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true },
-    EnvServiceProvider,
+    // EnvServiceProvider,
   ],
   bootstrap: [AppComponent]
 })

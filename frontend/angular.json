@@ -94,6 +94,9 @@
           "configurations": {
             "production": {
               "browserTarget": "automark:build:production"
+            },
+            "development": {
+              "browserTarget": "automark:build:development"
             }
           }
         },

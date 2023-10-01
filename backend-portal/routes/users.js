@@ -9,6 +9,7 @@ router
 	.get('/', apiAuth, allowOnly(['admin']), controller.listUser_get)
 	.put('/', apiAuth, allowOnly(['admin']), controller.updateUser_put)
 	.put('/suspend/:id', apiAuth, allowOnly(['admin']), controller.suspendClient_put)
+	.post('/register', controller.registerUser_post)
 	.post('/', apiAuth, allowOnly(['admin']), controller.createUser_post)
 	.delete('/:id', apiAuth, allowOnly(['admin']), controller.deleteUser_del)
 

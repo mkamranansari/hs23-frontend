@@ -19,6 +19,7 @@ export class HttpRequestService {
   }
 
   post(route: string, body: { [key: string]: any; }) {
+    console.log(environment.apiUrl)
     return this.http.post<HttpResponse>(this.api + route, body);
   }
 
